@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Routes from '../routes';
 import { Dropdown, MenuItem } from 'react-bootstrap';
 import ArtifactPage from './ArtifactPage';
+import NGLPage from './NGLPage';
 import { getLatestMetrics } from '../reducers/MetricReducer';
 import { Experiment } from '../sdk/MlflowMessages';
 import Utils from '../../common/utils/Utils';
@@ -304,6 +305,9 @@ export class RunViewImpl extends Component {
               initialSelectedArtifactPath={initialSelectedArtifactPath}
               runTags={tags}
             />
+          </CollapsibleSection>
+          <CollapsibleSection title='NGLView'>
+            <NGLPage runUuid={runUuid} />
           </CollapsibleSection>
         </div>
       </div>
